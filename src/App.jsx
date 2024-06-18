@@ -29,7 +29,6 @@ function App() {
   };
 
   useEffect(() => {
-    // re calculate the expeses
     let amount = 0;
     for (let item of expenses) {
       amount += item.amount;
@@ -40,6 +39,9 @@ function App() {
     setRemaining(rm);
     if (expenses.length > 0) {
       localStorage.setItem("expense", JSON.stringify(expenses));
+    }
+    else{
+      localStorage.removeItem("expense");
     }
   }, [expenses]);
 
